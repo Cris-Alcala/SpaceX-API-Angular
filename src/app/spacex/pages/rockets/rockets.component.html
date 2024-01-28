@@ -1,0 +1,36 @@
+<div class="rockets">
+    <div class="title">
+        <h1>Launch History</h1>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rocket Name</th>
+                    <th>First Flight</th>
+                    <th>Country</th>
+                    <th>Company</th>
+                    <th>Cost per launch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rocket of rockets">
+                    <td>{{rocket.name}}</td>
+                    <td>{{rocket.first_flight | date:'dd/MM/yyyy'}}</td>
+                    <td>{{rocket.country}}</td>
+                    <td>{{rocket.company}}</td>
+                    <td>{{rocket.cost_per_launch | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="more-info">
+        <h2>Aditional Information</h2>
+        <p>Rocket with more mass in KG is {{maxWeightRocket.name}} with {{maxWeightRocket.mass.kg | number}} Kg</p>
+    </div>
+    <div class="images">
+        <div class="img" *ngFor="let rocket of rockets">
+            <img src="{{rocket.flickr_images[0]}}" alt="Rocket Image" width="30%">
+        </div>
+    </div>
+</div>

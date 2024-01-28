@@ -1,0 +1,54 @@
+<div class="all">
+  <h1>All launches</h1>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Flight Number</th>
+          <th>Flight Name</th>
+          <th>Flight Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let launch of launches">
+          <td>
+            <a routerLink="launchinfo/{{ launch.id }}">{{
+              launch.flight_number
+            }}</a>
+          </td>
+          <td>
+            <a routerLink="launchinfo/{{ launch.id }}">{{ launch.name }}</a>
+          </td>
+          <td>{{ launch.date_utc | date : "dd/MM/yyy" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="upcoming">
+  <h1>Upcoming launches</h1>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Flight Number</th>
+          <th>Flight Name</th>
+          <th>Flight Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let launch of upcomingLaunches">
+          <td>
+            <a routerLink="launchinfo/{{ launch.id }}">{{
+              launch.flight_number
+            }}</a>
+          </td>
+          <td>
+            <a routerLink="launchinfo/{{ launch.id }}">{{ launch.name }}</a>
+          </td>
+          <td>{{ launch.date_utc | date : "dd/MM/yyy" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="launch">
+    <div class="img" *ngIf="launch.links.patch.small">
+        <img src="{{launch.links.patch.small}}" alt="Launch Icon">
+    </div>
+    <div class="name" *ngIf="launch.name">
+        <p>{{launch.name}}</p>
+    </div>
+    <div class="description" *ngIf="launch.details">
+        <p>{{launch.details}}</p>
+    </div>
+    <div class="status" *ngIf="launch.success !== null">
+        <p [ngClass]="{'success':launch.success, 'failure':!launch.success}">{{(launch.success)?'Success':'Failure'}}</p>
+    </div>
+    <div class="date" *ngIf="launch.date_utc">
+        <p>{{launch.date_utc | date:'dd/MM/yyyy'}}</p>
+    </div>
+</div>
